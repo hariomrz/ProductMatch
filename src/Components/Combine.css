@@ -1,0 +1,78 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001529;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .user-profile {
+    font-size: 16px;
+  }
+  
+
+  .sidebar {
+    height: 100vh;
+    background-color: #fff;
+  }
+  .ant-spin{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .emty-screen{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .product-img {
+    width: 50px;
+    height: auto;
+  }
+
+  .add-btn{
+    padding-left: 20px;
+  }
+ .ant-layout-content{
+  padding-left: 10px;
+ }
+.ant-table {
+  font-size: 14px; 
+}
+
+.highlighted {
+  background-color: #d3f9d8; 
+}
+
+@media (max-width: 768px) {
+  .ant-table {
+    font-size: 12px; 
+  }
+
+  .ant-table th, .ant-table td {
+    padding: 8px;
+  }
+}
+
+
+.comparison-card-container {
+  padding: 20px;
+}
+
+.comparison-card {
+  margin-bottom: 20px;
+}
+
+.comparison-card img {
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.comparison-card p {
+  margin: 8px 0;
+}

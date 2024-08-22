@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from 'antd';
+import Navbar from './Components/Navbar';
+import Sidebar from './Components/Sidebar';
+import ProductDetailsPage from './Pages/ProductDetailsPage';
+import CompareProductsPage from './Pages/CompareProductsPage';
+import './CommonStyle/global.css';
 
-function App() {
+const App = () => {
+  const [comparedProducts, setComparedProducts] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Navbar />
+        <Layout>
+          <Sidebar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ProductDetailsPage
+                  comparedProducts={comparedProducts}
+                  setComparedProducts={setComparedProducts}
+                />
+              }
+            />
+            <Route
+              path="/compare"
+              element={
+                <CompareProductsPage
+                  comparedProducts={comparedProducts}
+                  setComparedProducts={setComparedProducts}
+                />
+              }
+            />
+          </Routes>
+        </Layout>
+      </Layout>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
